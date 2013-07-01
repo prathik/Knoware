@@ -23,12 +23,30 @@ Class Server {
 	}
 
 	function router() {
+		switch($_SERVER['REQUEST_METHOD']) {
+		case 'GET':
+			switch($this->url[0]) {
+			case "": 
+				break;
+			case "get-thesis": 
+				$this->getThesis();
+				break;
+			default: 
+				$this->errorReply;
+				break;
+			}
 
-		switch ($this->url[0]) {
-		case "": break;
-		case "get-thesis": $this->getThesis();
-		break;
+			break;
+
+			case 'PUT':
+				$this->insertThesis();
+				break;
+
+			default: 
+				$this->errorReply; 
+				break;
 		}
+
 	}
 
 	function getThesis() {
@@ -65,6 +83,10 @@ Class Server {
 	function reply() {
 		header("Content-Type: application/json");
 		echo json_encode($this->replyObject);
+	}
+
+	function insertThesis() {
+		return true;
 	}
 }
 $server = new Server();
