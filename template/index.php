@@ -64,43 +64,7 @@
 						</div>
 					</div>
 
-					<div class="container">
-
-						<div class="row">
-							<div class="span6">
-								<h2>Learn From Your Mistakes</h2>
-								<p>The philosophy behind <strong>KnoWare</strong> is that we need to learn from our mistakes.</p>
-								<p><strong>KnoWare</strong> allows you to add thoughts or ideas, keep them in a review state for a period of time and them approve or reject it.</p>
-								<p>In the review period you test your idea and at the end of the review period <strong>KnoWare</strong> will alert you that you have to update the status. You can then approve it or reject it.</p>
-								<p>A rejected/approved thesis can be put back into review state too!</p>		
-							</div>
-							<div class="span6">
-								<h2>Sign Up!</h2>
-								<form>
-									<fieldset>
-										<legend>Enter your details</legend>
-										<label>Username</label>
-										<input type = "text" class = "input-xlarge" name= "name" placeholder="Username" />
-										<label>Email Id</label>
-										<input type = "text" class = "input-xlarge" name = "email" placeholder = "Email" />
-										<span class = "help-block">Alerts will be sent to this email id.</span>
-
-										<button class = "btn btn-primary">Sign Up!</button>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-
-						<hr>
-
-						<div class = "row">
-							<div class = "span12 text-center">
-								<p>KnoWare by Prathik Raj</p>
-							</div>
-						</div>
-
-					</div> <!-- /container -->
-
+					<div ng-view></div>
 					<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 					<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 						<script src="js/vendor/bootstrap.min.js"></script>

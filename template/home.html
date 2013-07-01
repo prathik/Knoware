@@ -1,0 +1,51 @@
+
+<div class="container">
+	<div class = "row">
+		<div class = "span12">
+			<ul class = "nav nav-pills">
+				<li><a  href="">Add Idea!</a></li>
+				<li><a href="">Review Ideas</a></li>
+				<li><a href="">View Approved Ideas</a></li>
+				<li><a href="">View Rejected Ideas</a></li>
+			</ul>   
+
+			<p class = "lead" >This is your dashboard, you can post new ideas and review old ones here.</p>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="span12">
+			<h2>Your ideas and thesis</h2>
+			<table class = "table table-hover">
+				<thead>
+					<tr>
+						<th>Thesis Id</th>
+						<th>Posted On</th>
+						<th>Review On</th>
+						<th>Title</th>
+						<th>State</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "idea in ideas" >
+						<td>{{idea.thesis_id}}</td>
+						<td>{{idea.posted_on}}</td>
+						<td>{{idea.review_time}}</td>
+						<td>{{idea.title}}</td>
+						<td>{{idea.review_state}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class = "row">
+		<div class = "span12 text-center">
+			<p>KnoWare by Prathik Raj</p>
+		</div>
+	</div>
+
+</div> <!-- /container -->
