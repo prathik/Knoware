@@ -32,9 +32,8 @@ function AddController($scope, $routeParams, $http) {
 					flag = true;
 				}
 			}
-			if(count == 4 && !flag) {
+			if(count == 6 && !flag) {
 				$http.put("server/add-thesis", idea).success(function(data) {
-					console.log(data);
 					if(data.result == "Success") {		
 						$scope.message = "<span class=\"label label-success\">Success! Your idea " + idea.title + " has been posted.</span>";
 					} else {
