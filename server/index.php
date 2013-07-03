@@ -39,7 +39,14 @@ Class Server {
 			break;
 
 			case 'PUT':
-				$this->insertThesis();
+				switch($this->url[0]) {
+					case "add-thesis":
+						$this->insertThesis();
+						break;
+					default:
+						$this->errorReply();
+						break;
+				}
 				break;
 
 			default: 
@@ -89,6 +96,17 @@ Class Server {
 	}
 
 	function insertThesis() {
+		$data = json_decode(file_get_contents("php://input"));
+		$var = $this->mysql->mysql->query( "INSERT INTO thesis ".
+							"values ( NULL, {$this->user_id} ".
+							", '{$data->posted_on}', '{$data->posted_on}' + INTERVAL {$data->review_on} WEEK".
+							", '{$data->title}', '{$data->description}', 'review' )");
+		if($var) {
+			$this->replyObject = array("result" => "Success");
+		} else {
+			$this->replyObject = array("result" => "Failure");
+		}
+		$this->reply();	
 		return true;
 	}
 
