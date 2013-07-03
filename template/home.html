@@ -4,9 +4,7 @@
 		<div class = "span12">
 			<ul class = "nav nav-pills">
 				<li><a  href="#/add">Add Idea!</a></li>
-				<li><a href="">Review Ideas</a></li>
-				<li><a href="">View Approved Ideas</a></li>
-				<li><a href="">View Rejected Ideas</a></li>
+				<li class = "active"><a href="./">View Ideas</a></li>
 			</ul>   
 
 			<p class = "lead" >This is your dashboard, you can post new ideas and review old ones here.</p>
@@ -32,7 +30,7 @@
 						<td>{{idea.thesis_id}}</td>
 						<td>{{idea.posted_on}}</td>
 						<td>{{idea.review_time}}</td>
-						<td>{{idea.title}}</td>
+						<td><a href="#/ideas/{{idea.thesis_id}}">{{idea.title}}</a></td>
 						<td>{{idea.review_state}}</td>
 					</tr>
 				</tbody>
