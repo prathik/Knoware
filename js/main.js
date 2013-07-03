@@ -8,8 +8,14 @@ angular.module('knowareapp', []).
   $routeProvider.
 	when('/ideas', {templateUrl: 'template/home.html',   controller: HomeCntl}).
 	when('/add', {templateUrl: 'template/add.html', controller: AddController}).
+	when('/ideas/:id', {templateUrl: 'template/idea.html', controller: IdeaController}).
       otherwise({redirectTo: '/ideas'});
 }]);
+
+function IdeaController($scope, $routeParams, $http) {
+
+	console.log( $routeParams.id );
+}
 
 function AddController($scope, $routeParams, $http) {
 	$scope.message = "<span class=\"label\">Enter the details and click Add</span>";
