@@ -22,12 +22,14 @@
 					<input  class = "input-xxlarge" ng-model= "idea.title" type ="text" placeholde= "Title" />
 					<span class = "help-block">Enter the title for your idea or thesis.</span>
 					<label>Description</label>
-					<textarea class = "input-xxlarge" ng-model = "idea.description" placeholder = "Description">
+					<textarea rows = "15" class = "input-xxlarge" ng-model = "idea.description" placeholder = "Description">
 					</textarea>
 					<span class = "help-block">Write everything about your idea.</span>
 					<label>Posted On</label>
-					<input type = "text" id = "postedon" class = "input-xxlarge" ng-model = "idea.posted_on" placeholder = "Posted On"/>
-					<span class = "help-block">Enter the data on which the review should start.</span>
+					<input type = "text" id = "postedon" class = "input-small" ng-model = "idea.year" placeholder = "Year"/>
+					<input type = "text" id = "postedon" class = "input-small" ng-model = "idea.month" placeholder = "Month"/>
+					<input type = "text" id = "postedon" class = "input-small" ng-model = "idea.day" placeholder = "Day"/>
+					<span class = "help-block">Enter the date on which the review should start.</span>
 					<label>Review Time</label>
 					<select class = "input-xxlarge" ng-model ="idea.review_on">
 						<option>1</option>

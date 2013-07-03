@@ -97,6 +97,7 @@ Class Server {
 
 	function insertThesis() {
 		$data = json_decode(file_get_contents("php://input"));
+		$data->posted_on = $data->year.'-'.$data->month.'-'.$data->day;
 		$var = $this->mysql->mysql->query( "INSERT INTO thesis ".
 							"values ( NULL, {$this->user_id} ".
 							", '{$data->posted_on}', '{$data->posted_on}' + INTERVAL {$data->review_on} WEEK".
