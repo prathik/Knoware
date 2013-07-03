@@ -68,6 +68,9 @@ Class Server {
 				return;
 			}
 
+		} else if (isset($this->url[1]) && $this->url[1] == "id") {
+			$this->singleThesis();
+			return;
 		} else {
 			$this->errorReply();
 			return;
@@ -87,6 +90,18 @@ Class Server {
 
 	function insertThesis() {
 		return true;
+	}
+
+	function singleThesis() {
+		if(isset($this->url[2]) && is_numeric($this->url[2])) {
+			$singleReplyObject = $this->mysql->mysql->query("SELECT * FROM thesis WHERE thesis_id = {$this->url[2]}");
+			if($singleReplyObject && $singleReplyObject->num_rows == 1) {
+				$this->replyObject = $singleReplyObject->fetch_object();
+				$this->reply();
+			} else {
+				$this->errorReply();
+			}
+		}
 	}
 }
 $server = new Server();

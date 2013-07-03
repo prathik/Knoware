@@ -14,7 +14,10 @@ angular.module('knowareapp', []).
 
 function IdeaController($scope, $routeParams, $http) {
 
-	console.log( $routeParams.id );
+	$http.get("server/get-thesis/id/"+$routeParams.id).success(function(data) {
+		console.log(data);
+		$scope.idea = data;
+	});
 }
 
 function AddController($scope, $routeParams, $http) {
