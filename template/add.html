@@ -26,12 +26,12 @@
 					</textarea>
 					<span class = "help-block">Write everything about your idea.</span>
 					<label>Posted On</label>
-					<input type = "text" class = "input-xxlarge" ng-model = "idea.posted_on" placeholder = "Posted On"/>
+					<input type = "text" id = "postedon" class = "input-xxlarge" ng-model = "idea.posted_on" placeholder = "Posted On"/>
 					<span class = "help-block">Enter the data on which the review should start.</span>
 					<label>Review Time</label>
 					<select class = "input-xxlarge" ng-model ="idea.review_on">
-						<option>1 Week</option>
-						<option>2 Weeks</option>
+						<option>1</option>
+						<option>2</option>
 					</select>
 					<span class = "help-block">Time after which review is complete.</span>
 					<button class="btn btn-primary"  ng-click= "update(idea)" >Add!</button>

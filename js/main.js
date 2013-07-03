@@ -33,8 +33,14 @@ function AddController($scope, $routeParams, $http) {
 				}
 			}
 			if(count == 4 && !flag) {
-				console.log(idea);
-				$scope.message = "<span class=\"label label-success\">Success! Your idea " + idea.title + " has been posted.</span>";
+				$http.put("server/add-thesis", idea).success(function(data) {
+					console.log(data);
+					if(data.result == "Success") {		
+						$scope.message = "<span class=\"label label-success\">Success! Your idea " + idea.title + " has been posted.</span>";
+					} else {
+						$scope.message = "<span class = \"label label-important\">There is a server-side issue in posting the data.</span>";
+					}
+				});
 			} else {
 				$scope.message = "<span class = \"label label-important\">Fill in all the fields.</span>";
 			}
