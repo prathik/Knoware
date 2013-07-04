@@ -31,8 +31,14 @@ Class Server {
 			case "get-thesis": 
 				$this->getThesis();
 				break;
+			case "approve":
+				$this->approveThesis();
+				break;
+			case "reject":
+				$this->rejectThesis();
+				break;
 			default: 
-				$this->errorReply;
+				$this->errorReply();
 				break;
 			}
 
@@ -76,7 +82,7 @@ Class Server {
 			}
 
 		} else if (isset($this->url[1]) && $this->url[1] == "id") {
-			$this->singleThesis();
+			$this->singleThesis($this->url[2]);
 			return;
 		} else {
 			$this->errorReply();
@@ -97,23 +103,25 @@ Class Server {
 
 	function insertThesis() {
 		$data = json_decode(file_get_contents("php://input"));
-		$data->posted_on = $data->year.'-'.$data->month.'-'.$data->day;
+		$data->posted_on = mysql_real_escape_string($data->year.'-'.$data->month.'-'.$data->day);
+		$data->description = mysql_real_escape_string(nl2br($data->description ));
+		$data->title = mysql_real_escape_string($data->title);
 		$var = $this->mysql->mysql->query( "INSERT INTO thesis ".
 							"values ( NULL, {$this->user_id} ".
 							", '{$data->posted_on}', '{$data->posted_on}' + INTERVAL {$data->review_on} WEEK".
 							", '{$data->title}', '{$data->description}', 'review' )");
 		if($var) {
-			$this->replyObject = array("result" => "Success");
+			$this->replyObject = array("data" => $data->description, "result" => "Success");
 		} else {
-			$this->replyObject = array("result" => "Failure");
+			$this->replyObject = array("data"=> $data->description, "result" => "Failure");
 		}
 		$this->reply();	
 		return true;
 	}
 
-	function singleThesis() {
-		if(isset($this->url[2]) && is_numeric($this->url[2])) {
-			$singleReplyObject = $this->mysql->mysql->query("SELECT * FROM thesis WHERE thesis_id = {$this->url[2]}");
+	function singleThesis($thesis_id) {
+		if(isset($thesis_id) && is_numeric($thesis_id)) {
+			$singleReplyObject = $this->mysql->mysql->query("SELECT * FROM thesis WHERE thesis_id = {$thesis_id}");
 			if($singleReplyObject && $singleReplyObject->num_rows == 1) {
 				$this->replyObject = $singleReplyObject->fetch_object();
 				$this->reply();
@@ -122,6 +130,25 @@ Class Server {
 			}
 		}
 	}
+	
+	function approveThesis() {
+		if(isset($this->url[1]) && is_numeric($this->url[1])) {
+			$var = $this->mysql->mysql->query("UPDATE thesis SET review_state = 'approved' WHERE thesis_id = {$this->url[1]}");
+			$this->singleThesis($this->url[1]);
+		} else {
+			$this->errorReply();
+		}
+	}
+
+        function rejectThesis() {
+                if(isset($this->url[1]) && is_numeric($this->url[1])) {
+                        $var = $this->mysql->mysql->query("UPDATE thesis SET review_state = 'rejected' WHERE thesis_id = {$this->url[1]}");
+                        $this->singleThesis($this->url[1]);
+                } else {
+                        $this->errorReply();
+                }   
+        }   
+
 }
 $server = new Server();
 $server->router();
