@@ -1,9 +1,0 @@
-[03-Jul-2013 04:16:10] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/codedro1/public_html/knoware/server/config.php on line 10
-[03-Jul-2013 04:16:10] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home4/codedro1/public_html/knoware/server/index.php on line 56
-[03-Jul-2013 04:16:10] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home4/codedro1/public_html/knoware/server/index.php on line 59
-[03-Jul-2013 04:16:28] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/codedro1/public_html/knoware/server/config.php on line 10
-[03-Jul-2013 04:16:28] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home4/codedro1/public_html/knoware/server/index.php on line 56
-[03-Jul-2013 04:16:28] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home4/codedro1/public_html/knoware/server/index.php on line 59
-[03-Jul-2013 04:16:30] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home4/codedro1/public_html/knoware/server/config.php on line 10
-[03-Jul-2013 04:16:30] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home4/codedro1/public_html/knoware/server/index.php on line 56
-[03-Jul-2013 04:16:30] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home4/codedro1/public_html/knoware/server/index.php on line 59
