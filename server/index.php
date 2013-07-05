@@ -103,17 +103,17 @@ Class Server {
 
 	function insertThesis() {
 		$data = json_decode(file_get_contents("php://input"));
-		$data->posted_on = mysql_real_escape_string($data->year.'-'.$data->month.'-'.$data->day);
-		$data->description = mysql_real_escape_string(nl2br($data->description ));
-		$data->title = mysql_real_escape_string($data->title);
+		$data->posted_on = mysqli_real_escape_string($this->mysql->mysql, $data->year.'-'.$data->month.'-'.$data->day);
+		$data->description = mysqli_real_escape_string($this->mysql->mysql, nl2br($data->description ));
+		$data->title = mysqli_real_escape_string($this->mysql->mysql, $data->title);
 		$var = $this->mysql->mysql->query( "INSERT INTO thesis ".
 							"values ( NULL, {$this->user_id} ".
 							", '{$data->posted_on}', '{$data->posted_on}' + INTERVAL {$data->review_on} WEEK".
 							", '{$data->title}', '{$data->description}', 'review' )");
 		if($var) {
-			$this->replyObject = array("data" => $data->description, "result" => "Success");
+			$this->replyObject = array("data" => $data, "result" => "Success");
 		} else {
-			$this->replyObject = array("data"=> $data->description, "result" => "Failure");
+			$this->replyObject = array('data' => $data, "debug"=> $this->mysql->mysql->error, "result" => "Failure");
 		}
 		$this->reply();	
 		return true;
