@@ -38,7 +38,7 @@ function IdeaController($scope, $routeParams, $http) {
 function AddController($scope, $routeParams, $http) {
 	$scope.message = "<span class=\"label\">Enter the details and click Add</span>";
 	var date = new Date();
-	$scope.idea = {year: date.getFullYear(), day: date.getDate(), month: date.getMonth(), review_on: 1};
+	$scope.idea = {year: date.getFullYear(), day: date.getDate(), month: date.getMonth() +1, review_on: 1};
 	$scope.update = function(idea) {
 		if(typeof idea != "undefined") {
 			var count = 0;
