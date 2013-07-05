@@ -111,7 +111,7 @@ Class Server {
 							", '{$data->posted_on}', '{$data->posted_on}' + INTERVAL {$data->review_on} WEEK".
 							", '{$data->title}', '{$data->description}', 'review' )");
 		if($var) {
-			$this->replyObject = array("data" => $data, "result" => "Success");
+			$this->replyObject = array("result" => "Success");
 		} else {
 			$this->replyObject = array('data' => $data, "debug"=> $this->mysql->mysql->error, "result" => "Failure");
 		}
