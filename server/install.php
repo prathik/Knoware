@@ -26,7 +26,7 @@ class Installer {
 	function install_users() {
 		$check = $this->query( "SELECT 1 FROM users" );
 		if($check == false) {
-			$result = $this->query( "CREATE TABLE users (user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, email VARCHAR(100), password TEXT, fullname VARCHAR(100))" );
+			$result = $this->query( "CREATE TABLE users (user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, username VARCHAR(100) NOT NULL, email VARCHAR(100) NOT NULL, password TEXT NOT NULL, fullname VARCHAR(100) NOT NULL)" );
 			if($result) {
 				$this->success('Completed users table creation.');
 			} else {
