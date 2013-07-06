@@ -4,8 +4,16 @@ class UserState extends UserStateManager {
 		return true;
 	}
 
-	public function register_user($username, $email, $password) {
-		return true;
+	public function register_user($username, $email, $password, $fullname) {
+		if(!$this->is_username_used($username) && !$this->is_email_used($email)) {
+			$mysql = new knoware_mysql();
+			$password_hash = crypt($password);
+			$mysql->query("INSERT INTO users VALUES (NULL, '{$username}', '{$email}', '{$password_hash}', '{$fullname}')");
+			$mysql->close();
+			return true;
+		} else {
+			return false;
+		}	
 	}
 
 	public function is_username_used($username) {
