@@ -10,8 +10,13 @@ class knoware_mysql {
 		$this->mysql = new mysqli($this->host, $this->username, $this->password, $this->database);
 	}
 
+	function query( $query_string ) {
+		$this->mysql->query( $query_string );
+	}
+
 	function close() {
 		$this->mysql->close();
 	}
 
 }
+?>
