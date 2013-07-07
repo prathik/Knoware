@@ -12,6 +12,15 @@ KnoWare promotes the scientific method where a concept has to be extensively exp
 
 This tool is built for a cause and so it will remain open source and not-for-profit. See the license section for more details.
 
+ToDo
+----
+
+* Build the review workflow.
+* Send reminders to users via email if they have to review.
+* Implement public/private ideas.
+* Enable commenting on private ideas. (priority)
+* Enable commenting on public ideas.
+
 Requirements
 ------------
 
