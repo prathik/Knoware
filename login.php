@@ -6,14 +6,15 @@ if( isset( $_POST['login'] ) && $_POST['login'] == 'login' ) {
 	if( $var ) {
 		header("Location: ./");
 	} else {
-		header("Location: ./");
+		echo "Invalid username or password";
+		echo "<br />Sorry about the design of this page - its being built.";
 	}
 }
 
 if( isset($_GET['action']) && $_GET['action'] == 'logout' ) {
 	if( $user->sign_out_user() ) {
 		header("Location: ./");
-	}
+	} 
 }
 
 if( isset( $_POST['register'] ) && $_POST['register'] == "register" ) {
