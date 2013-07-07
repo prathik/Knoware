@@ -1,4 +1,7 @@
 <?php
+
+//Define your SALT here
+define( 'SALT', '' );
 class knoware_mysql {
 	public $mysql;
 	private $username = "root";
@@ -11,7 +14,11 @@ class knoware_mysql {
 	}
 
 	function query( $query_string ) {
-		$this->mysql->query( $query_string );
+		return $this->mysql->query( $query_string );
+	}
+
+	function insert_user ( $username, $email, $password_hash, $fullname ) {
+		return $this->query( "INSERT INTO users VALUES (NULL, '{$username}', '{$email}', '{$password_hash}', '{$fullname}')" );
 	}
 
 	function close() {

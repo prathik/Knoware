@@ -1,5 +1,5 @@
 <?php
-class UserState extends UserStateManager {
+class UserState extends UserStateManager {	
 	public function is_user_logged_in() {
 		return true;
 	}
@@ -42,7 +42,15 @@ class UserState extends UserStateManager {
 	}
 
 	public function sign_in_user($username, $password) {
-		return true;
+		if( $this->is_username_used( $username ) ) {
+			$mysql = new knoware_mysql();
+			$var = $mysql->query( "SELECT password FROM users WHERE username = '{$username}'");
+			$passwordObject = $var->fetch_row();
+			if( crypt( $password, $passwordObject[0] ) == $passwordObject[0] ) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public function delete_user($username) {
