@@ -18,7 +18,6 @@
 			<table class = "table table-hover">
 				<thead>
 					<tr>
-						<th>Thesis Id</th>
 						<th>Title</th>
 						<th>Posted On</th>
 						<th>Review On</th>
@@ -27,7 +26,6 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat = "idea in ideas" >
-						<td>{{idea.thesis_id}}</td>	
 						<td><a href="#/ideas/{{idea.thesis_id}}">{{idea.title}}</a></td>
 						<td>{{idea.posted_on}}</td>
 						<td>{{idea.review_time}}</td>
