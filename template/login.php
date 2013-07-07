@@ -58,7 +58,7 @@
 								<p>The philosophy behind <strong>KnoWare</strong> is that we need to learn from our mistakes.</p>
 								<p><strong>KnoWare</strong> allows you to add thoughts or ideas, keep them in a review state for a period of time and them approve or reject it.</p>
 								<p>In the review period you test your idea and at the end of the review period <strong>KnoWare</strong> will alert you that you have to update the status. You can then approve it or reject it.</p>
-								<p>A rejected/approved thesis can be put back into review state too!</p>		
+								<p>A rejected/approved thesis can be put back into review state too.</p>		
 							</div>
 							<div class="span6">
 								<h2>Sign Up!</h2>
