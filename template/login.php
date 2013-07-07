@@ -56,9 +56,10 @@
 										</ul>
 										</li>
 									</ul>
-									<form class="navbar-form pull-right">
-										<input class="span2" type="text" placeholder="Email">
-										<input class="span2" type="password" placeholder="Password">
+									<form method = "POST" action = "login.php" class="navbar-form pull-right">
+										<input name = "username" class="span2" type="text" placeholder="Username">
+										<input name =  "password" class="span2" type="password" placeholder="Password">
+										<input name = "login" type = "hidden" value = "login" />
 										<button type="submit" class="btn btn-primary">Login</button>
 									</form>
 								</div><!--/.nav-collapse -->
@@ -108,6 +109,6 @@
 
 						<script src="js/vendor/bootstrap.min.js"></script>
 
-						<script src="js/main.js"></script>
+						<script src="js/login.js"></script>
 					</body>
 				</html>

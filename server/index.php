@@ -1,5 +1,5 @@
 <?php
-require("config.php");
+require(dirname(dirname(__FILE__))."/class/knoware-load.php");
 Class Server {
 	public $url;
 	public $user_id;
@@ -11,7 +11,7 @@ Class Server {
 		if(isset($_GET['q'])){
 			$this->url = explode('/', $_GET['q']);
 			//Determine User Id from Cookies, set to default till functionality is built
-			$this->user_id = 1;
+			$this->user_id = $_COOKIE[ 'user_id' ];
 		} else {
 			$url = array();
 			$url[0] = "";
@@ -150,6 +150,9 @@ Class Server {
         }   
 
 }
-$server = new Server();
-$server->router();
+$user = new UserState();
+if($user->is_user_logged_in()) {
+	$server = new Server();
+	$server->router();
+}
 ?>
