@@ -124,7 +124,7 @@ Class Server {
 
 	function singleThesis($thesis_id) {
 		if(isset($thesis_id) && is_numeric($thesis_id)) {
-			$singleReplyObject = $this->mysql->mysql->query("SELECT * FROM thesis WHERE thesis_id = {$thesis_id}");
+			$singleReplyObject = $this->mysql->mysql->query("SELECT * FROM thesis WHERE thesis_id = {$thesis_id} and user_id = {$this->user_id}");
 			if($singleReplyObject && $singleReplyObject->num_rows == 1) {
 				$this->replyObject = $singleReplyObject->fetch_object();
 				$this->reply();
