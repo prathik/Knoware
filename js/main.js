@@ -1,6 +1,5 @@
 function navController($scope, $routeParams, $http) {
 	$http.get( 'server/user/' ).success( function(data) {
-		console.log(data);
 		$scope.user = data;
 	});
 
@@ -24,6 +23,7 @@ function AboutPageController($scope, $routeParams, $http) {
 function IdeaController($scope, $routeParams, $http) {
 
 	$http.get("server/get-thesis/id/"+$routeParams.id).success(function(data) {
+		console.log(data);
 		$scope.idea = data;
 	});
 	$scope.approve = function(thesis) {
