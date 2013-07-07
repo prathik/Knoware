@@ -79,16 +79,20 @@
 							</div>
 							<div class="span6">
 								<h2>Sign Up!</h2>
-								<form>
+								<form action = "login.php" method = "POST">
 									<fieldset>
 										<legend>Enter your details</legend>
+										<label>Full Name</label>
+										<input type = "text" class= "input-xlarge" name = "fullname" placeholder = "Full Name" />
 										<label>Username</label>
-										<input type = "text" class = "input-xlarge" name= "name" placeholder="Username" />
+										<input type = "text" class = "input-xlarge" name= "username" placeholder="Username" />
 										<label>Email Id</label>
 										<input type = "text" class = "input-xlarge" name = "email" placeholder = "Email" />
-										<span class = "help-block">Alerts will be sent to this email id.</span>
-
-										<button class = "btn btn-primary">Sign Up!</button>
+										<span class = "help-block">Alerts will be sent to this email id.</span>	
+										<label>Password</label>
+										<input type = "password" class = "input-xlarge" name = "password" /> <br />
+										<input type = "hidden" name = "register" value = "register" />
+										<button type = "submit" class = "btn btn-primary">Sign Up!</button>
 									</fieldset>
 								</form>
 							</div>
