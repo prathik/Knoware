@@ -1,5 +1,8 @@
-function navController($scope, $location) {
-	$scope.user = {name: "Prathik Raj"};
+function navController($scope, $routeParams, $http) {
+	$http.get( 'server/user/' ).success( function(data) {
+		console.log(data);
+		$scope.user = data;
+	});
 
 }
 

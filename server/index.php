@@ -37,6 +37,9 @@ Class Server {
 			case "reject":
 				$this->rejectThesis();
 				break;
+			case "user":
+				$this->userDetails();
+				break;
 			default: 
 				$this->errorReply();
 				break;
@@ -148,6 +151,16 @@ Class Server {
                         $this->errorReply();
                 }   
         }   
+
+	function userDetails() {
+		$var = $this->mysql->query( "SELECT fullname as name, email, username FROM users WHERE user_id = {$this->user_id} ");
+		if($var->num_rows == 1) {
+			$this->replyObject = $var->fetch_object();
+			$this->reply();
+		} else {
+			$this->errorReply();
+		}
+	}
 
 }
 $user = new UserState();
