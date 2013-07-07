@@ -8,7 +8,7 @@ class UserState extends UserStateManager {
 		if(!$this->is_username_used($username) && !$this->is_email_used($email)) {
 			$mysql = new knoware_mysql();
 			$password_hash = crypt($password);
-			$mysql->query("INSERT INTO users VALUES (NULL, '{$username}', '{$email}', '{$password_hash}', '{$fullname}')");
+			$mysql->insert_user( $username, $email, $password_hash, $fullname);
 			$mysql->close();
 			return true;
 		} else {
@@ -17,11 +17,24 @@ class UserState extends UserStateManager {
 	}
 
 	public function is_username_used($username) {
-		return false;
+		$mysql = new knoware_mysql();
+		$var = $mysql->query("SELECT username FROM users WHERE username = '{$username}'");
+		if($var->num_rows == 0) {
+			return false;
+		} else {
+			return true;
+		}
+		$mysql->close();
 	}
 
 	public function is_email_used($email) {
-		return false;
+		$mysql = new knoware_mysql();
+		$var = $mysql->query( "SELECT email FROM users WHERE email = '{$email}'");
+		if($var->num_rows == 0) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	public function change_password($oldpassword, $newpassword){ 
