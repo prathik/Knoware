@@ -41,15 +41,17 @@
 								<a class="brand" href="#">KnoWare</a>
 								<div class="nav-collapse collapse">
 									<ul class="nav">
-										<li><a href="#about">About</a></li>
+										<li><a href="#/about">About</a></li>
 										<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions<b class="caret"></b></a>
 										<ul class="dropdown-menu">
+											<li class="divider"></li>
+											<li class="nav-header">User</li>
 											<li><a href="login.php?action=logout">Logout</a></li>
 											<li class="divider"></li>
 											<li class="nav-header">Idea/Thesis</li>
-											<li><a href="#">Separated link</a></li>
-											<li><a href="#">One more separated link</a></li>
+											<li><a href="./#/ideas">View Ideas</a></li>
+											<li><a href="./#/add">Add Idea!</a></li>
 										</ul>
 										</li>
 									</ul>
