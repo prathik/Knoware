@@ -2,3 +2,4 @@ server/config.php
 *.swp
 error_log
 *test.*
+config.php
