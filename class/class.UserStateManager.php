@@ -7,5 +7,6 @@ abstract Class UserStateManager {
 	abstract public function change_password($oldpassword, $newpassword);
 	abstract public function sign_in_user($username, $password);
 	abstract public function delete_user($username);
+	abstract public function sign_out_user();
 }
 ?>
