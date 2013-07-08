@@ -19,6 +19,8 @@ if( isset($_GET['action']) && $_GET['action'] == 'logout' ) {
 
 if( isset( $_POST['register'] ) && $_POST['register'] == "register" ) {
 	if( $user->register_user( $_POST['username'], $_POST['email'], $_POST['password'], $_POST['fullname'] ) ) {
+		echo "You have been successfully registerd.";
+		echo "<br />Page under construction."
 		header("Location: ./");
 	}
 }
