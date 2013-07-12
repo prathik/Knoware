@@ -30,7 +30,8 @@
 
 					<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
 
-					<div class="navbar navbar-inverse navbar-fixed-top" ng-controller="navController">
+					<div class="navbar navbar-inverse navbar-fixed-top">
+
 						<div class="navbar-inner">
 							<div class="container">
 								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -56,9 +57,9 @@
 										</li>
 									</ul>
 								</div><!--/.nav-collapse -->
-								<div class="span2 pull-right visible-desktop">
+								<!-- <div ng-controller="navController" class="span2 pull-right visible-desktop">
 									<p class = "navbar-text">Hello {{user.name}}</p>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
