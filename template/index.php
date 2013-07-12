@@ -56,7 +56,7 @@
 										</li>
 									</ul>
 								</div><!--/.nav-collapse -->
-								<div class="span2 pull-right">
+								<div class="span2 pull-right visible-desktop">
 									<p class = "navbar-text">Hello {{user.name}}</p>
 								</div>
 							</div>
