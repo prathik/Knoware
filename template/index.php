@@ -57,9 +57,9 @@
 										</li>
 									</ul>
 								</div><!--/.nav-collapse -->
-								<!-- <div ng-controller="navController" class="span2 pull-right visible-desktop">
+								<div ng-controller="navController" class="span2 pull-right visible-desktop">
 									<p class = "navbar-text">Hello {{user.name}}</p>
-								</div> -->
+								</div> 
 							</div>
 						</div>
 					</div>
