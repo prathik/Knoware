@@ -25,6 +25,10 @@ function IdeaController($scope, $routeParams, $http) {
 	$http.get("server/get-thesis/id/"+$routeParams.id).success(function(data) {
 		$scope.idea = data;
 	});
+
+    $http.get("server/get-comments/" + $routeParams.id).success(function(data) {
+	$scope.commentList = data;
+    });
 	$scope.approve = function(thesis) {
 		$http.get("server/approve/" + thesis).success(function(data) {
 			$scope.idea = data;
@@ -35,6 +39,17 @@ function IdeaController($scope, $routeParams, $http) {
 			$scope.idea = data;
 		});
 	}
+    
+    
+    $scope.addComment = function(comment) {
+	if(typeof comment != 'undefined') {
+	    var data = new Object();
+	    data.comment = comment;
+	    $http.put("server/add-comment/" + $routeParams.id , data).success( function(data) {
+		$scope.commentList = data;
+	    });
+	}
+    }
 }
 
 function AddController($scope, $routeParams, $http) {

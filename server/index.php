@@ -40,6 +40,9 @@ Class Server {
 			case "user":
 				$this->userDetails();
 				break;
+			case "get-comments":
+				$this->getComments();
+				break;
 			default: 
 				$this->errorReply();
 				break;
@@ -51,6 +54,9 @@ Class Server {
 				switch($this->url[0]) {
 					case "add-thesis":
 						$this->insertThesis();
+						break;
+					case "add-comment":
+						$this->addComment();
 						break;
 					default:
 						$this->errorReply();
@@ -160,6 +166,47 @@ Class Server {
 		} else {
 			$this->errorReply();
 		}
+	}
+
+	function addComment() {
+		 if(isset($this->url[1]) && is_numeric($this->url[1]) && $this->is_current_user_idea($this->url[1])) {
+		 			 $data = json_decode(file_get_contents("php://input"));
+					 $status = $this->mysql->query("INSERT INTO comments VALUES (NULL, '{$this->url[1]}', '{$data->comment}', NOW())");
+					 if($status) {
+						$this->getComments();
+					} else {
+					  $this->errorReply();
+					  }
+		 } else {
+		   $this->errorReply();
+		 }
+	}
+
+	function is_current_user_idea($id) {
+		 return true;
+	}
+
+	function getComments() {
+		 if(isset($this->url[1]) && is_numeric($this->url[1]) && $this->is_current_user_idea($this->url[1])) {
+		 			 $results = $this->mysql->query("SELECT comment FROM comments WHERE thesis_id = '{$this->url[1]}' ORDER BY posted_on ASC");
+					 if($results) {
+					 	      if($results->num_rows != 0) {
+									    $resultArray = array();
+									    while( $result = $results->fetch_object()) {
+							       		    $resultArray[] = $result;
+									    }
+							 		    $this->replyObject = $resultArray;
+							 		    $this->reply();
+							 } else {
+							   	$this->replyObject = array(array( "comment" => "No Comments" )) ;
+								$this->reply();
+								}
+						      } else {
+						      $this->errorReply();
+						      }
+		 } else {
+		   $this->errorReply();
+		   }
 	}
 
 }
