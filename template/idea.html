@@ -28,6 +28,24 @@
 		</div>
 	</div>
 
+	<div class = "row">
+	  <div class = "span12">
+	    <h3>Comments</h3>
+	    <table class = "table table-bordered">
+	      <tr ng-repeat = "commentItem in commentList">
+		<td>{{commentItem.comment}}</td>
+	      </tr>
+	    </table>
+	    <p>Add Comment</p>
+	    <form> 
+	      <textarea class = "input-xxlarge" ng-model="comment">
+	      </textarea>
+	      <br>
+	      <button  ng-click = "addComment(comment)" class = "btn btn-primary">Add Comment</button>
+	    </form>
+	  </div>
+	</div>
+
 	<hr>
 
 	<div class = "row">

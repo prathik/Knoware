@@ -72,12 +72,28 @@ class Installer {
 	function __destruct() {
 		$this->mysql->mysql->close();
 	}
+
+        function install_comments() {
+                $check = $this->query( "SELECT 1 FROM comments" );
+                if($check == false) {
+                        $result = $this->query( "CREATE TABLE comments (comment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, thesis_id INT NOT NULL, comment TEXT NOT NULL, posted_on DATETIME NOT NULL)" );
+                        if($result) {
+                                $this->success('Completed comments table creation.');
+                        } else {
+                                $this->failure('There was a problem creating comments table.');
+                        }
+                } else {
+                        $this->warning('Looks like comments table is already present.');
+                }
+        }
+
 }
 
 $install = new Installer();
 $install->output_begin();
 $install->install_users();
 $install->install_thesis();
+$install->install_comments();
 $install->output_end();
 
 ?>
