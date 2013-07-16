@@ -171,6 +171,7 @@ Class Server {
 	function addComment() {
 		 if(isset($this->url[1]) && is_numeric($this->url[1]) && $this->is_current_user_idea($this->url[1])) {
 		 			 $data = json_decode(file_get_contents("php://input"));
+					 $data->comment = mysqli_real_escape_string($this->mysql->mysql, $data->comment);
 					 $status = $this->mysql->query("INSERT INTO comments VALUES (NULL, '{$this->url[1]}', '{$data->comment}', NOW())");
 					 if($status) {
 						$this->getComments();
