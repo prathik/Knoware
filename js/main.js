@@ -42,11 +42,13 @@ function IdeaController($scope, $routeParams, $http) {
     
     
     $scope.addComment = function(comment) {
-	if(typeof comment != 'undefined') {
+	if(typeof comment != 'undefined' && comment !== null) {
+	    console.log(comment);
 	    var data = new Object();
 	    data.comment = comment;
 	    $http.put("server/add-comment/" + $routeParams.id , data).success( function(data) {
 		$scope.commentList = data;
+		$scope.comment = null;
 	    });
 	}
     }
