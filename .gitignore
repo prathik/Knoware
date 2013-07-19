@@ -3,3 +3,4 @@ server/config.php
 error_log
 *test.*
 config.php
+#*#
