@@ -15,11 +15,11 @@ This tool is built for a cause and so it will remain open source and not-for-pro
 ToDo
 ----
 
-- [] Build the review workflow.
-- []  Send reminders to users via email if they have to review.
-- []  Implement public/private ideas.
-- [x] Enable commenting on private ideas. (priority)
-- [] Enable commenting on public ideas.
+* Build the review workflow.
+* Send reminders to users via email if they have to review.
+* Implement public/private ideas.
+* Enable commenting on private ideas. (priority)
+* Enable commenting on public ideas.
 
 Requirements
 ------------
