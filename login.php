@@ -132,7 +132,7 @@ if( isset( $_POST['register'] ) && $_POST['register'] == "register" ) {
 
 						<div class = "row">
 							<div class = "span12 text-center">
-								<p>KnoWare by Prathik Raj</p>
+								<p>KnoWare</p>
 							</div>
 						</div>
 

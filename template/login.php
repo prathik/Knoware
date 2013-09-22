@@ -54,11 +54,10 @@
 
 						<div class="row">
 							<div class="span6">
-								<h1>Thought Management And Tracking Tool</h1>
-								<p>The philosophy behind <strong>KnoWare</strong> is that we need to be aware of our thoughts and learn from our mistakes.</p>
-								<p><strong>KnoWare</strong> allows you to add thoughts or ideas, keep them in a review state for a period of time and them approve or reject it.</p>
-								<p>In the review period you test your idea and at the end of the review period <strong>KnoWare</strong> will alert you that you have to update the status. You can then approve it or reject it.</p>
-								<p>A rejected/approved thesis can be put back into review state later.</p>		
+								<h3>Thought Management Tool</h3>
+								<p>The philosophy behind <strong>KnoWare</strong> is that we need to be aware of our thoughts.</p>
+								<p><strong>KnoWare</strong> allows you to add thoughts, keep them in a review state for a period of time and them approve or reject it.</p>
+								<p>In the review period you put your thoughts to test and at the end of the review period <strong>KnoWare</strong> will alert you that you have to update the status. You can then approve it or reject it.</p>
 							</div>
 							<div class="span6">
 								<form action = "login.php" method = "POST">
@@ -84,7 +83,7 @@
 
 						<div class = "row">
 							<div class = "span12 text-center">
-								<p>KnoWare by Prathik Raj</p>
+								<p>KnoWare</p>
 							</div>
 						</div>
 
