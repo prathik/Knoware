@@ -73,9 +73,7 @@ Class Server {
 
 	function getThesis() {
 		if(isset($this->url[1]) && is_numeric($this->url[1])) {
-			$page = ($this->url[1] - 1)*10;
-			$upper_limit = $page + 9;
-			$result_object = $this->mysql->mysql->query("SELECT * FROM thesis WHERE user_id = '$this->user_id' ORDER BY posted_on DESC LIMIT $page,$upper_limit");
+			$result_object = $this->mysql->mysql->query("SELECT * FROM thesis WHERE user_id = '$this->user_id' ORDER BY posted_on DESC");
 			if($result_object !== false) {
 				$this->replyObject = array();
 				while($result = $result_object->fetch_object()) {
