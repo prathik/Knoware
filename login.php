@@ -59,7 +59,7 @@ if( isset( $_POST['register'] ) && $_POST['register'] == "register" ) {
 
 					<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
 
-					<div class="navbar navbar-inverse navbar-fixed-top">
+					<div class="navbar navbar-fixed-top">
 						<div class="navbar-inner">
 							<div class="container">
 								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
