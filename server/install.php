@@ -56,7 +56,7 @@ class Installer {
 
 
 	function output_begin() {
-		echo '<!DOCTYPE html><html><head><title>Install KnoWare</title>'.
+		echo '<!DOCTYPE html><html><head><title>Install Knoware</title>'.
 			'<style type = "text/css">'.
 			'.success { color: green; }'.
 			'.failure { color: red; }'.

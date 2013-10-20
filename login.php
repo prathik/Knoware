@@ -36,7 +36,7 @@ if( isset( $_POST['register'] ) && $_POST['register'] == "register" ) {
 				<head>
 					<meta charset="utf-8">
 					<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-					<title>KnoWare</title>
+					<title>Knoware</title>
 					<meta name="description" content="">
 					<meta name="viewport" content="width=device-width">
 
@@ -67,7 +67,7 @@ if( isset( $_POST['register'] ) && $_POST['register'] == "register" ) {
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</a>
-								<a class="brand" href="./">KnoWare</a>
+								<a class="brand" href="./">Knoware</a>
 								<div class="nav-collapse collapse">
 									<form method = "POST" action = "login.php" class="navbar-form pull-right">
 										<input name = "username" class="span2" type="text" placeholder="Username">
@@ -120,7 +120,7 @@ if( isset( $_POST['register'] ) && $_POST['register'] == "register" ) {
 								</form>
 								<?php } else if($showMessage ==2) { ?>
 								<h3>Success!</h3>
-								<p class = "text-success">You have been successfully registerd. Please login to start using KnoWare.</p>
+								<p class = "text-success">You have been successfully registerd. Please login to start using Knoware.</p>
 								<?php } ?>
 
 							</div>
@@ -132,7 +132,7 @@ if( isset( $_POST['register'] ) && $_POST['register'] == "register" ) {
 
 						<div class = "row">
 							<div class = "span12 text-center">
-								<p>KnoWare</p>
+								<p>Knoware</p>
 							</div>
 						</div>
 

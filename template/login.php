@@ -6,7 +6,7 @@
 				<head>
 					<meta charset="utf-8">
 					<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-					<title>KnoWare</title>
+					<title>Knoware</title>
 					<meta name="description" content="">
 					<meta name="viewport" content="width=device-width">
 
@@ -37,7 +37,7 @@
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</a>
-								<a class="brand" href="#">KnoWare</a>
+								<a class="brand" href="#">Knoware</a>
 								<div class="nav-collapse collapse">
 									<form method = "POST" action = "login.php" class="navbar-form pull-right">
 										<input name = "username" class="span2" type="text" placeholder="Username">
@@ -55,9 +55,7 @@
 						<div class="row">
 							<div class="span6">
 								<h3>Thought Management Tool</h3>
-								<p>The philosophy behind <strong>KnoWare</strong> is that we need to be aware of our thoughts.</p>
-								<p><strong>KnoWare</strong> allows you to add thoughts, keep them in a review state for a period of time and them approve or reject it.</p>
-								<p>In the review period you put your thoughts to test and at the end of the review period <strong>KnoWare</strong> will alert you that you have to update the status. You can then approve it or reject it.</p>
+								
 							</div>
 							<div class="span6">
 								<form action = "login.php" method = "POST">
@@ -83,7 +81,7 @@
 
 						<div class = "row">
 							<div class = "span12 text-center">
-								<p>KnoWare</p>
+								<p>Knoware</p>
 							</div>
 						</div>
 

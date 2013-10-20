@@ -1,4 +1,4 @@
-KnoWare
+Knoware
 =======
 
 Knowledge Manangement and Tracking Software.
@@ -6,9 +6,9 @@ Knowledge Manangement and Tracking Software.
 Vision note for contributors
 ----------------------------
 
-KnoWare is a tool that "improves society by enabling people to think better". All features of KnoWare should fall under that goal.
+Knoware is a tool that "improves society by enabling people to think better". All features of Knoware should fall under that goal.
 
-KnoWare promotes the scientific method where a concept has to be extensively experimented with and tested before it is accepted.
+Knoware promotes the scientific method where a concept has to be extensively experimented with and tested before it is accepted.
 
 This tool is built for a cause and so it will remain open source and not-for-profit. See the license section for more details.
 
@@ -51,7 +51,7 @@ Link to GPL 3: http://www.gnu.org/licenses/gpl.html
 
 Additional Terms:
 
-* Users should never be charged to use KnoWare.
+* Users should never be charged to use Knoware.
 * Money can be raised only via donation by people and these donations should be made by the will of people and no extra benefits or service can be given for these donations.
 * Private data of the users including their email, username or thesis (also called ideas) cannot be sold or shared without prior permission from the said user and the permission has to be acceptable by the local (with respect to the user) law authorities.
 * Names of the original author(s) should always be mentioned in any distribution.

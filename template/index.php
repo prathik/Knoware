@@ -6,7 +6,7 @@
 				<head>
 					<meta charset="utf-8">
 					<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-					<title>KnoWare</title>
+					<title>Knoware</title>
 					<meta name="description" content="">
 					<meta name="viewport" content="width=device-width">
 
@@ -39,7 +39,7 @@
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</a>
-								<a class="brand" href="./">KnoWare</a>
+								<a class="brand" href="./">Knoware</a>
 								<div class="nav-collapse collapse">
 									<ul class="nav">
 										<li><a href="#/about">About</a></li>
