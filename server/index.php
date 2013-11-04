@@ -73,7 +73,7 @@ Class Server {
 
 	function getThesis() {
 		if(isset($this->url[1]) && is_numeric($this->url[1])) {
-			$result_object = $this->mysql->mysql->query("SELECT * FROM thesis WHERE user_id = '$this->user_id' ORDER BY posted_on DESC");
+			$result_object = $this->mysql->mysql->query("SELECT * FROM thesis WHERE user_id = '$this->user_id' ORDER BY CASE review_state when 'approved' then 2 when 'review' then 1 when 'rejected' then 3 else 0 end asc, posted_on asc");
 			if($result_object !== false) {
 				$this->replyObject = array();
 				while($result = $result_object->fetch_object()) {
